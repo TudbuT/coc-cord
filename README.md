@@ -1,6 +1,10 @@
-# coc-cord
+# coc-cord-reborn
 
-An extension of coc to get Discord Rich Presence integration with NeoVim
+An actively maintained for of a coc extension to get Discord Rich Presence integration with NeoVim.
+
+## "Why another fork? coc-discord-rpc exists!"
+
+Because coc-discord-rpc is not actively maintained and has become buggy.
 
 ## Installation
 
@@ -14,10 +18,10 @@ An extension of coc to get Discord Rich Presence integration with NeoVim
 | **`cord.reconnect`** | Reconnects you to Discord gateway |
 | **`cord.version`** | Prints extension version |
 
-## WIP
+## Screenshot
 
 ![screenshot](screenshot.png)
 
 ## License
 
-Licensed under the [**MIT**](https://choosealicense.com/licenses/mit/) license.
+Licensed under the **MIT** license.
