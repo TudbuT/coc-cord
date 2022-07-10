@@ -1,6 +1,6 @@
 # coc-cord-reborn
 
-An actively maintained for of a coc extension to get Discord Rich Presence integration with NeoVim.
+An actively maintained fork of a coc extension to get Discord Rich Presence integration with NeoVim.
 
 ## "Why another fork? coc-discord-rpc exists!"
 
