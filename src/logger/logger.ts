@@ -9,16 +9,16 @@ export enum LogLevel {
 export const LOG = (level: LogLevel, message: string) => {
 	switch (level) {
 		case LogLevel.Info: {
-			window.showMessage(`coc-cord: ${message}`, "more");
+			window.showMessage(`coc-cord-reborn: ${message}`, "more");
 		}
 		case LogLevel.Warn: {
-			window.showMessage(`coc-cord: ${message}`, "warning");
+			window.showMessage(`coc-cord-reborn: ${message}`, "warning");
 		}
 		case LogLevel.Err: {
-			window.showMessage(`coc-cord: ${message}`, "error");
+			window.showMessage(`coc-cord-reborn: ${message}`, "error");
 		}
 		default: {
-			window.showMessage(`coc-cord: ${message}`, undefined);
+			window.showMessage(`coc-cord-reborn: ${message}`, undefined);
 		}
 	}
 };
