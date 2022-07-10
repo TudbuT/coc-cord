@@ -2,11 +2,9 @@
 
 An extension of coc to get Discord Rich Presence integration with NeoVim
 
-> **NOTE**: use [coc-discord-rpc](https://github.com/LeonardSSH/coc-discord-rpc) - a much better version of coc-cord - instead
-
 ## Installation
 
-`:CocInstall coc-cord`
+`:CocInstall coc-cord-reborn`
 
 ## Commands
 
