@@ -1,26 +1,35 @@
 {
-	"name": "coc-cord",
-	"version": "0.5.1",
+	"name": "coc-cord-reborn",
+	"version": "0.1.0",
 	"description": "An extension of coc to get Discord Rich Presence integration with NeoVim",
-	"private": false,
 	"main": "lib/index.js",
-	"homepage": "https://github.com/dakyskye/coc-cord",
+	"homepage": "https://github.com/tudbut/coc-cord-reborn",
 	"author": {
-		"name": "Lasha Kanteladze",
-		"email": "kanteladzelasha339@gmail.com",
-		"url": "https://github.com/dakyskye"
+		"name": "Daniel H",
+		"email": "tudbut@tudbut.de",
+		"url": "https://github.com/tudbut"
 	},
 	"repository": {
-		"url": "https://github.com/dakyskye/coc-cord",
+		"url": "https://github.com/tudbut/coc-cord-reborn",
 		"type": "git"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/dakyskye/coc-cord/issues"
+		"url": "https://github.com/tudbut/coc-cord-reborn/issues"
 	},
-	"keywords": ["discord", "rich", "presence", "rich presence", "rpc", "neovim", "nvim", "coc", "coc.nvim"],
+	"keywords": [
+		"discord",
+		"rich",
+		"presence",
+		"rich presence",
+		"rpc",
+		"neovim",
+		"nvim",
+		"coc",
+		"coc.nvim"
+	],
 	"engines": {
-		"coc": ">=0.0.77"
+		"coc": ">=0.0.81"
 	},
 	"scripts": {
 		"clean": "rm -rf lib/*",
@@ -28,13 +37,12 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"discord-rpc": "discordjs/RPC"
+		"discord-rpc": "^4.0.1"
 	},
 	"devDependencies": {
 		"@types/discord-rpc": "^3.0.4",
-		"@types/node": "^14.0.22",
-		"coc.nvim": "0.0.77",
+		"coc.nvim": "^0.0.81",
 		"prettier": "^2.0.5",
-		"typescript": "^3.9.6"
+		"typescript": "^4.7.4"
 	}
 }

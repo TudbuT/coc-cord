@@ -1,5 +1,5 @@
 import { Client as RPCClient } from "discord-rpc";
-import { workspace, commands, ExtensionContext } from "coc.nvim";
+import { workspaceFolder, workspace, commands, ExtensionContext } from "coc.nvim";
 import { getPresence } from "../presence/presence";
 import { LOG, LogLevel } from "../logger/logger";
 import { VERSION } from "../version/version";
@@ -62,7 +62,7 @@ export class Client {
 	private trackActivity = async () => {
 		const startTimeStamp = new Date();
 		this.interval = setInterval(() => {
-			this._client!.setActivity(getPresence(startTimeStamp, workspace.root.split("/").pop(), workspace.getDocument(workspace.uri)?.uri.split("/").pop()));
+			this._client!.setActivity(getPresence(startTimeStamp, workspace.root.split("/").pop(), workspace.getDocument(workspaceFolder)?.uri.split("/").pop()));
 		}, 1000);
 	};
 }

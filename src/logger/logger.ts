@@ -1,4 +1,4 @@
-import { workspace } from "coc.nvim";
+import { window } from "coc.nvim";
 
 export enum LogLevel {
 	Info = 0,
@@ -9,16 +9,16 @@ export enum LogLevel {
 export const LOG = (level: LogLevel, message: string) => {
 	switch (level) {
 		case LogLevel.Info: {
-			workspace.showMessage(`coc-cord: ${message}`, "more");
+			window.showMessage(`coc-cord: ${message}`, "more");
 		}
 		case LogLevel.Warn: {
-			workspace.showMessage(`coc-cord: ${message}`, "warning");
+			window.showMessage(`coc-cord: ${message}`, "warning");
 		}
 		case LogLevel.Err: {
-			workspace.showMessage(`coc-cord: ${message}`, "error");
+			window.showMessage(`coc-cord: ${message}`, "error");
 		}
 		default: {
-			workspace.showMessage(`coc-cord: ${message}`, undefined);
+			window.showMessage(`coc-cord: ${message}`, undefined);
 		}
 	}
 };
