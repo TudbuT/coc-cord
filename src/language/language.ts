@@ -59,6 +59,7 @@ langs.push({ name: "Golang", fileName: "go", extension: "sum", assetName: "golan
 langs.push({ name: "Golang", extension: "go", assetName: "golang" });
 langs.push({ name: "Golang", fileName: "go", extension: "mod", assetName: "golang" });
 langs.push({ name: "GraphQL", extension: "graphql", assetName: "graphql" });
+langs.push({ name: "Groovy", extension: "groovy", extensionAliases: ["gradle"], assetName: "java" });
 langs.push({ name: "C language", extension: "h", assetName: "h" });
 langs.push({ name: "Haskell", extension: "hs", extensionAliases: ["lhs"], assetName: "haskell" });
 langs.push({ name: "C++", extension: "hpp", extensionAliases: ["hh", "hxx"], assetName: "hpp" });
