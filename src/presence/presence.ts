@@ -5,7 +5,7 @@ export const getPresence = (startTimeStamp: number | Date, workspace?: string, f
 	let presence: Presence = {
 		startTimestamp: startTimeStamp,
 		smallImageKey: "nvim",
-		smallImageText: "NeoVim text editor"
+		smallImageText: "NeoVim"
 	};
 
 	let idlingPresence: Presence = {

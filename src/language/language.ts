@@ -64,7 +64,7 @@ langs.push({ name: "Haskell", extension: "hs", extensionAliases: ["lhs"], assetN
 langs.push({ name: "C++", extension: "hpp", extensionAliases: ["hh", "hxx"], assetName: "hpp" });
 langs.push({ name: "INI", extension: "ini", assetName: "config" });
 langs.push({ name: "HTML", extension: "html", assetName: "html" });
-langs.push({ name: "Java", extension: "java", extensionAliases: ["jar"], assetName: "java" });
+langs.push({ name: "Java", extension: "java", extensionAliases: ["jar", "class"], assetName: "java" });
 langs.push({ name: "JavaScript", extension: "js", assetName: "javascript" });
 langs.push({ name: "JavaScript React", extension: "jsx", assetName: "javascriptx" });
 langs.push({ name: "JSON", extension: "json", assetName: "json" });

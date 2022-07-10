@@ -61,8 +61,8 @@ export class Client {
 
 	private trackActivity = async () => {
 		const startTimeStamp = new Date();
-		this.interval = setInterval(() => {
-			this._client!.setActivity(getPresence(startTimeStamp, workspace.root.split("/").pop(), workspace.getDocument(workspace.root)?.uri.split("/").pop()));
+		this.interval = setInterval(async () => {
+			this._client!.setActivity(getPresence(startTimeStamp, workspace.root.split("/").pop(), workspace.getDocument((await workspace.document).uri)?.uri.split("/").pop()));
 		}, 1000);
 	};
 }
