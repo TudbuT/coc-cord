@@ -5,37 +5,39 @@ import { LOG, LogLevel } from "../logger/logger";
 import { VERSION } from "../version/version";
 
 export class Client {
-    private readonly _clientID: string;
-    private _client?: RPCClient;
+    private readonly clientID: string;
+    private client?: RPCClient;
     private interval = setInterval(() => {}, 1);
 
     constructor(clientID: string) {
-        this._clientID = clientID;
-        this._client = new RPCClient({ transport: "ipc" });
+        this.clientID = clientID;
+        this.client = new RPCClient({ transport: "ipc" });
         clearInterval(this.interval);
     }
 
     public connect = async (ctx?: ExtensionContext) => {
-        if (!this._client) {
-            this._client = new RPCClient({ transport: "ipc" });
+        if (!this.client) {
+            this.client = new RPCClient({ transport: "ipc" });
         }
         let reconnectTimeout;
-        this._client.login({ clientId: this._clientID }).catch(e => {
+        this.client.login({ clientId: this.clientID }).catch(e => {
             if(!reconnectTimeout) {
-                reconnectTimeout = setTimeout(() => {
+                reconnectTimeout = setTimeout(async () => {
                     LOG(LogLevel.Info, "reconnecting due to error");
-                    this.connect();
+                    this.client.destroy().catch(e => {});
+                    this.client = null;
+                    this.connect(ctx);
                     reconnectTimeout = null;
-                }, 1000);
+                }, 5000);
             }
         });
-        this._client.on("ready", () => this.ready(ctx))
+        this.client.on("ready", () => this.ready(ctx))
     };
 
     public disconnect = async () => {
         clearInterval(this.interval);
-        await this._client!.destroy();
-        this._client = undefined;
+        await this.client!.destroy();
+        this.client = undefined;
         LOG(LogLevel.Info, "disconnected from Discord gateway");
     };
 
@@ -70,7 +72,7 @@ export class Client {
     private trackActivity = async () => {
         const startTimeStamp = new Date();
         this.interval = setInterval(async () => {
-            this._client!
+            this.client!
                 .setActivity(getPresence(startTimeStamp, workspace.root.split("/").pop(), workspace.getDocument((await workspace.document).uri)?.uri.split("/").pop()))
                 .catch(e => setTimeout(() => this.connect(), 1000));
         }, 1000);
