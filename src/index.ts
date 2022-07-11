@@ -16,4 +16,4 @@ export const deactivate = async () => {
 	return await client.disconnect();
 };
 
-process.on("unhandledRejection", (err) => LOG(LogLevel.Err, err as string));
+process.on("unhandledRejection", (err) => {LOG(LogLevel.Err, err as string)});

@@ -1,40 +1,40 @@
 export type language = {
-	name: string;
-	fileName?: string;
-	extension: string;
-	extensionAliases?: Array<string>;
-	assetName: string;
+    name: string;
+    fileName?: string;
+    extension: string;
+    extensionAliases?: Array<string>;
+    assetName: string;
 };
 
 let langs: Array<language> = [];
 
 langs.push({
-	name: "LICENSE",
-	fileName: "license",
-	extension: "",
-	extensionAliases: ["txt", "md", "html", "asciidoc"],
-	assetName: "license"
+    name: "LICENSE",
+    fileName: "license",
+    extension: "",
+    extensionAliases: ["txt", "md", "html", "asciidoc"],
+    assetName: "license"
 });
 langs.push({
-	name: "LICENSE",
-	fileName: "LICENSE",
-	extension: "",
-	extensionAliases: ["txt", "md", "html", "asciidoc"],
-	assetName: "license"
+    name: "LICENSE",
+    fileName: "LICENSE",
+    extension: "",
+    extensionAliases: ["txt", "md", "html", "asciidoc"],
+    assetName: "license"
 });
 langs.push({
-	name: "Prettier",
-	fileName: ".prettierrc",
-	extension: "json",
-	extensionAliases: ["yml", "yaml", "toml", "js", "config.js"],
-	assetName: "prettier"
+    name: "Prettier",
+    fileName: ".prettierrc",
+    extension: "json",
+    extensionAliases: ["yml", "yaml", "toml", "js", "config.js"],
+    assetName: "prettier"
 });
 langs.push({
-	name: "ESLint",
-	fileName: ".eslintrc",
-	extension: "json",
-	extensionAliases: ["js", "yaml"],
-	assetName: "eslint"
+    name: "ESLint",
+    fileName: ".eslintrc",
+    extension: "json",
+    extensionAliases: ["js", "yaml"],
+    assetName: "eslint"
 });
 langs.push({ name: "Composer", fileName: "composer", extension: "json", assetName: "php" });
 langs.push({ name: "TypeScript config", fileName: "tsconfig", extension: "json", assetName: "tsconfig" });
