@@ -24,7 +24,9 @@ export class Client {
             if(!reconnectTimeout) {
                 reconnectTimeout = setTimeout(async () => {
                     LOG(LogLevel.Info, "reconnecting due to error");
-                    this.client.destroy().catch(e => {});
+                    try {
+                        this.client.destroy().catch(e => {});
+                    } catch(e) {}
                     this.client = null;
                     this.connect(ctx);
                     reconnectTimeout = null;
