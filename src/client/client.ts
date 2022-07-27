@@ -75,8 +75,35 @@ export class Client {
         const startTimeStamp = new Date();
         this.interval = setInterval(async () => {
             this.client!
-                .setActivity(getPresence(startTimeStamp, workspace.root.split("/").pop(), workspace.getDocument((await workspace.document).uri)?.uri.split("/").pop()))
+                .setActivity(getPresence(startTimeStamp, mode((await workspace.nvim.mode).mode), workspace.root.split("/").pop(), workspace.getDocument((await workspace.document).uri)?.uri.split("/").pop()))
                 .catch(e => setTimeout(() => this.connect(), 1000));
         }, 1000);
     };
+}
+
+function mode(mode: string) {
+    switch(mode) {
+        case 'n': 
+            return 'Normal';
+        case 'c':
+            return 'Command';
+        case 'i':
+            return 'Insert';
+        case 'R':
+            return 'Replace';
+        case 'v':
+        case 'V':
+        case '':
+            return 'Visual';
+        case 's':
+        case 'S':
+        case '':
+            return 'Select';
+        case 't':
+            return 'Terminal';
+        case 'r': // Please someone tell me what this is! I couldn't find any resources on it.
+            return 'Normal';
+        default:
+            return mode;
+    }
 }

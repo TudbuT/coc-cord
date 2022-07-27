@@ -1,7 +1,7 @@
 import { Presence } from "discord-rpc";
 import { language, languages } from "../language/language";
 
-export const getPresence = (startTimeStamp: number | Date, workspace?: string, fileName?: string): Presence => {
+export const getPresence = (startTimeStamp: number | Date, mode: string, workspace?: string, fileName?: string): Presence => {
     let presence: Presence = {
         startTimestamp: startTimeStamp,
         smallImageKey: "nvim",
@@ -22,7 +22,7 @@ export const getPresence = (startTimeStamp: number | Date, workspace?: string, f
     }
 
     presence.state = `Workspace: ${workspace}`;
-    presence.details = `Editing ${fileName}`;
+    presence.details = `Editing ${fileName} (${mode})`;
 
     let ext = fileName.split(".");
 
@@ -57,7 +57,7 @@ export const getPresence = (startTimeStamp: number | Date, workspace?: string, f
 
     presence.largeImageKey = lang.assetName;
     presence.largeImageText = lang.name;
-    presence.details = `Editing ${fileName}`;
+    presence.details = `Editing ${fileName} (${mode})`;
 
     return presence;
 };
