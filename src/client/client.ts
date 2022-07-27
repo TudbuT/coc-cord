@@ -75,13 +75,20 @@ export class Client {
         const startTimeStamp = new Date();
         this.interval = setInterval(async () => {
             this.client!
-                .setActivity(getPresence(startTimeStamp, mode((await workspace.nvim.mode).mode), workspace.root.split("/").pop(), workspace.getDocument((await workspace.document).uri)?.uri.split("/").pop()))
+                .setActivity(getPresence(startTimeStamp, stringMode((await workspace.nvim.mode).mode), workspace.root.split("/").pop(), workspace.getDocument((await workspace.document).uri)?.uri.split("/").pop()))
                 .catch(e => setTimeout(() => this.connect(), 1000));
         }, 1000);
     };
 }
 
-function mode(mode: string) {
+function stringMode(mode: string): string {
+    if(mode.length > 1) {
+        let fullMode: string = '';
+        for(let char of mode.split('')) {
+            fullMode += stringMode(char) + " ";
+        }
+        return fullMode.substring(0, fullMode.length - 1);
+    }
     switch(mode) {
         case 'n': 
             return 'Normal';

@@ -1,6 +1,6 @@
 {
 	"name": "coc-cord-reborn",
-	"version": "0.1.6a",
+	"version": "0.1.6b",
 	"description": "An extension of coc to get Discord Rich Presence integration with NeoVim",
 	"main": "lib/index.js",
 	"homepage": "https://github.com/tudbut/coc-cord-reborn",
